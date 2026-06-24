@@ -1,0 +1,337 @@
+/* --- CONFIGURATION VARIATION SYSTEM --- */
+:root {
+    --font-heading: 'DM Serif Display', serif;
+    --font-body: 'Poppins', sans-serif;
+
+    /* Traditional Andhra Food Themed Colors */
+    --chilli-red: #8C1D1D;      
+    --turmeric-gold: #E67E22;   
+    --warm-cream: #FDF9F3;      
+    --card-white: #FFFFFF;      
+    --text-dark: #2A2421;       
+    --text-muted: #7F8C8D;      
+    --success-green: #27AE60;   
+}
+
+/* --- BASE WRAPPER STYLES --- */
+body {
+    font-family: var(--font-body);
+    background-color: var(--warm-cream);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- BANNER HEADER STYLING --- */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #FFF0DB 0%, var(--warm-cream) 100%);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo-container {
+    margin-bottom: 12px;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(140, 29, 29, 0.15);
+    border: 3px solid white;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    color: var(--chilli-red);
+    font-size: 2.8rem;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+header h2 {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--turmeric-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 5px 0 0 0;
+}
+
+/* --- CONTAINER MAIN BOUNDS --- */
+.container {
+    width: 90%;
+    max-width: 550px; 
+    margin-bottom: 60px;
+}
+
+/* --- SECTION CATEGORIES --- */
+.menu-section h2 {
+    font-family: var(--font-heading);
+    color: var(--chilli-red);
+    font-size: 1.8rem;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-section h2::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(90deg, #8C1D1D40, transparent);
+}
+
+/* --- FLEX CONTAINER CARDS --- */
+.menu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu-item {
+    background: var(--card-white);
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(140, 29, 29, 0.03);
+    border: 1px solid rgba(140, 29, 29, 0.05);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
+}
+
+.menu-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(140, 29, 29, 0.08);
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-name {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+}
+
+.item-price {
+    font-weight: 700;
+    color: var(--chilli-red);
+    font-size: 1.1rem;
+}
+
+/* --- ADD / REMOVE BUTTON COMPONENT --- */
+.add-btn {
+    background-color: white;
+    color: var(--turmeric-gold);
+    border: 1.5px solid var(--turmeric-gold);
+    padding: 6px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    font-family: var(--font-body);
+    transition: all 0.2s ease;
+}
+
+.add-btn:hover {
+    background-color: var(--turmeric-gold);
+    color: white;
+    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.15);
+}
+
+/* Selected button state color conversion */
+.add-btn.selected {
+    background-color: var(--chilli-red);
+    color: white;
+    border-color: var(--chilli-red);
+}
+
+/* --- INPUT CHECKOUT COMPONENT FRAME --- */
+.checkout-box {
+    background: var(--card-white);
+    border-radius: 24px;
+    padding: 24px;
+    margin-top: 45px;
+    box-shadow: 0 10px 30px rgba(140, 29, 29, 0.06);
+    border: 1px solid rgba(140, 29, 29, 0.08);
+    text-align: center;
+    animation: slideUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.checkout-box h3 {
+    font-family: var(--font-heading);
+    color: var(--chilli-red);
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.total-amount {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.total-amount strong {
+    color: var(--chilli-red);
+    font-size: 1.5rem;
+}
+
+/* Live Injection Cart Row Styles */
+.cart-items-container {
+    background-color: #FAF6F0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(140, 29, 29, 0.05);
+    text-align: left;
+}
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(42, 36, 33, 0.1);
+}
+
+.cart-item-row:last-child {
+    border-bottom: none;
+}
+
+.cart-item-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.cart-item-price {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--chilli-red);
+}
+
+/* UPI Frame layout wrapper */
+.qr-container {
+    background: #FFFBF7;
+    border: 2px dashed #E67E2240;
+    padding: 20px;
+    border-radius: 16px;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.qr-container p {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.qr-code {
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Input form group typography alignment */
+.form-group {
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    font-family: var(--font-body);
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    background-color: #FAFAFA;
+    transition: all 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--turmeric-gold);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1);
+}
+
+/* Checkbox alignment architecture */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 22px 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    accent-color: var(--chilli-red);
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+}
+
+.checkbox-group label {
+    font-size: 0.88rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    user-select: none;
+}
+
+/* Submit Action Button configuration */
+.submit-order-btn {
+    font-family: var(--font-body);
+    background-color: var(--success-green);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
+    transition: all 0.2s;
+}
+
+.submit-order-btn:hover {
+    background-color: #219653;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(39, 174, 96, 0.3);
+}

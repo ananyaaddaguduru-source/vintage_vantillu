@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Vantillu</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-maroon: #8C1D1D;
+            --warm-gold: #D9A05B;
+            --cream-bg: #FDF9F3;
+            --charcoal: #2A2421;
+            --success-green: #27AE60;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--cream-bg);
+            margin: 0;
+            color: var(--charcoal);
+        }
+
+        .navbar {
+            background: var(--primary-maroon);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .menu-title {
+            color: var(--primary-maroon);
+            border-bottom: 2px solid var(--warm-gold);
+            padding-bottom: 8px;
+            margin-top: 35px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 14px;
+            padding: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .price-tag {
+            display: block;
+            margin-top: 5px;
+            color: var(--primary-maroon);
+            font-weight: bold;
+        }
+
+        .add-btn {
+            background: var(--primary-maroon);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .checkout-box {
+            background: white;
+            margin-top: 40px;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .submit-order-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--success-green);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .qr-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .qr-code {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1>🍛 VINTAGE VANTILLU</h1>
+    </div>
+    <div style="text-align:center; margin-top:20px;">
+    <img src="/static/logo_ss.png"
+         alt="Vintage Vantillu Logo"
+         style="max-width:220px;">
+</div>
+
+    <div class="container">
+
+        <h2 class="menu-title">Breakfast</h2>
+
+        <div class="menu-item">
+            <div>
+                <h3>Idli Combo (4 pcs)</h3>
+                <span class="price-tag">₹90</span>
+            </div>
+            <button class="add-btn" onclick="addToCart('Idli Combo',90)">Add</button>
+        </div>
+
+        <div class="menu-item">
+            <div>
+                <h3>Rice Bonda (4 pcs)</h3>
+                <span class="price-tag">₹100</span>
+            </div>
+            <button class="add-btn" onclick="addToCart('Rice Bonda',100)">Add</button>
+        </div>
+
+        <div class="menu-item">
+            <div>
+                <h3>Puri Combo (3 pcs)</h3>
+                <span class="price-tag">₹120</span>
+            </div>
+            <button class="add-btn" onclick="addToCart('Puri Combo',120)">Add</button>
+        </div>
+
+        <div class="menu-item">
+            <div>
+                <h3>Karam Dosa (2 pcs)</h3>
+                <span class="price-tag">₹140</span>
+            </div>
+            <button class="add-btn" onclick="addToCart('Karam Dosa',140)">Add</button>
+        </div>
+
+        <div class="menu-item">
+            <div>
+                <h3>Ulli Dosa (2 pcs)</h3>
+                <span class="price-tag">₹140</span>
+            </div>
+            <button class="add-btn" onclick="addToCart('Ulli Dosa',140)">Add</button>
+        </div>
+
+        <h2 class="menu-title">Lunch</h2>
+
+        <div class="menu-item"><div><h3>Andhra Mini Meals</h3><span class="price-tag">₹220</span></div><button class="add-btn" onclick="addToCart('Andhra Mini Meals',220)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Veg Pappu Combo</h3><span class="price-tag">₹130</span></div><button class="add-btn" onclick="addToCart('Veg Pappu Combo',130)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Veg Sambar Combo</h3><span class="price-tag">₹130</span></div><button class="add-btn" onclick="addToCart('Veg Sambar Combo',130)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Pulusu Combo</h3><span class="price-tag">₹130</span></div><button class="add-btn" onclick="addToCart('Pulusu Combo',130)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Gutti Vankaya Combo</h3><span class="price-tag">₹150</span></div><button class="add-btn" onclick="addToCart('Gutti Vankaya Combo',150)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Pachadi Combo</h3><span class="price-tag">₹130</span></div><button class="add-btn" onclick="addToCart('Pachadi Combo',130)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Majjiga Pulusu Combo</h3><span class="price-tag">₹130</span></div><button class="add-btn" onclick="addToCart('Majjiga Pulusu Combo',130)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Avakai Annam (450ml)</h3><span class="price-tag">₹170</span></div><button class="add-btn" onclick="addToCart('Avakai Annam',170)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Gongura Rice (450ml)</h3><span class="price-tag">₹170</span></div><button class="add-btn" onclick="addToCart('Gongura Rice',170)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Pulihora Combo</h3><span class="price-tag">₹150</span></div><button class="add-btn" onclick="addToCart('Pulihora Combo',150)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Veg Pulao</h3><span class="price-tag">₹150</span></div><button class="add-btn" onclick="addToCart('Veg Pulao',150)">Add</button></div>
+
+        <h2 class="menu-title">Evening Specials</h2>
+
+        <div class="menu-item"><div><h3>Punugulu (20 pcs)</h3><span class="price-tag">₹120</span></div><button class="add-btn" onclick="addToCart('Punugulu',120)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Onion Pakoda (450ml)</h3><span class="price-tag">₹120</span></div><button class="add-btn" onclick="addToCart('Onion Pakoda',120)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Mirchi Bajji (4 pcs)</h3><span class="price-tag">₹110</span></div><button class="add-btn" onclick="addToCart('Mirchi Bajji',110)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Raw Banana Bajji (4 pcs)</h3><span class="price-tag">₹110</span></div><button class="add-btn" onclick="addToCart('Raw Banana Bajji',110)">Add</button></div>
+
+        <div class="menu-item"><div><h3>Masala Dal Vada (4 pcs)</h3><span class="price-tag">₹110</span></div><button class="add-btn" onclick="addToCart('Masala Dal Vada',110)">Add</button></div>
+
+        <div class="checkout-box">
+
+            <h2>Your Order</h2>
+
+            <div id="cartItemsContainer"></div>
+
+            <p>Food Total: ₹<span id="foodTotal">0</span></p>
+
+            <p>Delivery Charge: ₹50</p>
+
+            <h3>Total: ₹<span id="displayTotal">0</span></h3>
+
+            <div class="qr-container">
+                <p>Scan & Pay</p>
+
+                <!-- Replace with your QR image later -->
+                <img src="/static/qr.png" class="qr-code">
+            </div>
+
+            <form action="/submit-order" method="POST">
+
+                <input type="hidden" name="total_amount" id="hiddenTotal">
+
+                <input type="hidden" name="items_ordered" id="hiddenItems">
+
+                <div class="form-group">
+    <input type="text" name="customer_name" placeholder="Your Name" required>
+</div>
+
+<div class="form-group">
+    <input type="text" name="customer_phone" placeholder="WhatsApp Number" required>
+</div>
+
+<div class="form-group">
+    <input type="text" name="customer_address"
+           placeholder="Delivery Address" required>
+</div>
+
+<div class="form-group">
+    <input type="text" name="customer_landmark"
+           placeholder="Landmark (Optional)">
+</div>
+
+<button class="submit-order-btn">
+    Submit Order To Kitchen
+</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        let cart = {};
+
+function addToCart(item, price) {
+
+    if(cart[item]) {
+        cart[item].qty++;
+    }
+    else {
+        cart[item] = {
+            qty: 1,
+            price: price
+        };
+    }
+
+    renderCart();
+}
+
+function decreaseItem(item){
+
+    if(!cart[item]) return;
+
+    cart[item].qty--;
+
+    if(cart[item].qty <= 0){
+        delete cart[item];
+    }
+
+    renderCart();
+}
+
+        function renderCart() {
+
+            let total = 0;
+
+            let html = "";
+
+            let summary = [];
+
+            for(let item in cart) {
+
+                let cost = cart[item].qty * cart[item].price;
+
+                total += cost;
+
+                html += `
+<div style="margin-bottom:10px;">
+    <button onclick="decreaseItem('${item}')">-</button>
+
+    <span style="margin:0 10px;">
+        ${item} x${cart[item].qty}
+    </span>
+
+    <button onclick="addToCart('${item}', ${cart[item].price})">+</button>
+
+    = ₹${cost}
+</div>
+`;
+
+
+                summary.push(`${item} x${cart[item].qty}`);
+            }
+
+            document.getElementById("cartItemsContainer").innerHTML = html;
+            document.getElementById("foodTotal").innerText = total;
+            let finalTotal = total + 50;
+
+            document.getElementById("displayTotal").innerText = finalTotal;
+
+            document.getElementById("hiddenTotal").value = finalTotal;
+            document.getElementById("hiddenItems").value = summary.join(", ");
+        }
+    </script>
+
+</body>
+</html>
+
+
+
