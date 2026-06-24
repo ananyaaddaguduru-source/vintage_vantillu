@@ -25,7 +25,8 @@ CREATE TABLE IF NOT EXISTS orders (
     landmark TEXT,
     total TEXT,
     items TEXT,
-    status TEXT
+    status TEXT,
+    eta TEXT
 )
 """)
 
